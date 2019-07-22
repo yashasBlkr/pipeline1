@@ -7,7 +7,7 @@ stages {
 				sh '''
 						set +x
 						echo -e "\n\n**************************** This is a Build JOB **************************** "
-           					 cd /var/lib/jenkins/workspace/sample_pipeline1
+           					 cd /var/lib/jenkins/workspace/Pipeline1
 						  
 						  echo -e "\n\nSTEP 1:	Initiating Build (using make)........"
 								make -f mkfile2
