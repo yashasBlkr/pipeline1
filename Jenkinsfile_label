@@ -1,0 +1,26 @@
+pipeline {
+agent {
+        label 'Cbuild'
+    }
+stages {
+        stage('Build') {
+		             steps {
+                echo 'Building..'
+				sh 'pwd; chmod 777 build deploy test; ./build'
+				
+            }
+        }
+        stage('deploy') {
+		           steps {
+                echo 'Deploying to TEST environment..'
+				sh 'chmod 777 deploy; ./deploy'
+            }
+        }
+        stage('test') {
+		            steps {
+                echo 'Testing....'
+				sh 'chmod 777 test; ./test'
+					}
+				}
+    }
+}
