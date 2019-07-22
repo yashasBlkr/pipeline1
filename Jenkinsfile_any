@@ -1,0 +1,23 @@
+pipeline{
+agent:any
+stages{
+	stage('build'){
+ 	steps{
+		echo "building"
+		sh 'pwd; chmod 777 build deploy test; ./build'
+     }
+        }
+        stage('deploy') {
+            steps {
+                echo 'Deploying to TEST environment..'
+				sh './deploy'
+            }
+        }
+        stage('test') {
+            steps {
+                echo 'Testing....'
+				sh './test'
+					}
+				}
+    }
+}

@@ -1,0 +1,19 @@
+#!/bin/bash
+set +x
+						echo -e "\n\n**************************** This is a Build JOB **************************** "
+           					 cd /var/lib/jenkins/workspace/Pipeline1
+						  
+						  echo -e "\n\nSTEP 1:	Initiating Build (using make)........"
+								make -f mkfile2
+								make -f mkfile2 clean
+						if [[ -x "XYZ.exe" ]]; then  
+							echo -e "\nSTEP 4:	Build Successful"
+							echo "       	BUILD_FILE: XYZ.exe"	
+						else
+							echo -e "**************** ERROR *********************\n"
+							echo "Build failure - No executable file generated"
+							echo -e "********************************************\n"
+							exit 1
+						fi    
+						echo -e "\n************************************************************************** "
+
