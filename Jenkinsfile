@@ -33,7 +33,7 @@ stages {
                 echo 'Deploying to TEST environment..'
 				sh '''
 					set +x
-          				pwd=/var/lib/jenkins/workspace/sample_piepeline1
+          				pwd=/var/lib/jenkins/workspace/Pipeline1
 					file="$(pwd)/XYZ.exe"
 					
 										
@@ -66,7 +66,7 @@ stages {
                 echo 'Testing....'
 				sh '''
 				set +x
-					pwd=/var/lib/jenkins/workspace/sample_piepeline1
+					pwd=/var/lib/jenkins/workspace/Pipeline1
 					file="$(pwd)/XYZ.exe"
 									
 				echo -e "\n\n**************************** This is a TEST JOB for $file**************************** "
