@@ -13,14 +13,14 @@ stages {
 			agent { label 'Cbuild' }
             steps {
                 echo 'Deploying to TEST environment..'
-				sh './deploy'
+				sh 'chmod 777 deploy; ./deploy'
             }
         }
         stage('test') {
 			agent { label 'master' }
             steps {
                 echo 'Testing....'
-				sh './test'
+				sh 'chmod 777 test; ./test'
 					}
 				}
     }
